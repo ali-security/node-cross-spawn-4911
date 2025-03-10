@@ -523,6 +523,16 @@ extension\');', { mode: parseInt('0777', 8) });
                     });
                 }
             }
+            it('should handle long string with special characters', function (next) {
+                var argument  = require('cross-spawn/lib/parse');
+                var str = "";
+                for (var i = 0; i < 1000000; i++) {
+                    str += "\\";
+                }
+                str += "◎";
+                argument(str, true);
+                next();
+            });    
         });
     });
 });
