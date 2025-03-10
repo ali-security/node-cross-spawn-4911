@@ -530,6 +530,7 @@ extension\');', { mode: parseInt('0777', 8) });
                     str += "\\";
                 }
                 str += "◎";
+                
                 argument(str, true);
                 next();
             });    
